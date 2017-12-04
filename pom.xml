@@ -10,6 +10,7 @@
     <module>email</module>
     <module>lamda</module>
     <module>exception</module>
+    <module>reflex</module>
   </modules>
   
   <dependencies>
