@@ -1,4 +1,4 @@
-package org.email;
+package org.exception;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
