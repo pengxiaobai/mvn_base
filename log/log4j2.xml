@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	monitorInterval:设置自动检测配置文件为30s
+ -->
+<Configuration status="WARN" monitorInterval="30">
+
+  <properties>
+  	<!-- 设置文件名 -->
+    <property name="filename">/xinclude-demo.log</property>
+  </properties>
+  <Appenders>
+  	<!-- 在控制台中输出   以 -->
+    <Console name="Console" target="SYSTEM_OUT">
+      <!-- 输出格式 -->	
+      <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+    
+    <!-- 设置记录文件 -->
+    <File name="File" fileName="${filename}" bufferedIO="true" immediateFlush="true">
+    <PatternLayout>
+      <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+    </PatternLayout>
+  </File>
+  </Appenders>
+  <Loggers>
+   <!-- additivity:false=事件将不会被传递给它的任何一个父记录者，而不管他们的添加性设置是什么。默认是true-->
+    <Logger name="com.pxh.log.Bar" level="trace" additivity="false">
+      <AppenderRef ref="Console"/>
+    </Logger>
+  	<!-- 日子记录级别 -->
+    <Root level="error">
+      <AppenderRef ref="File"/>
+    </Root>
+  </Loggers>
+</Configuration>

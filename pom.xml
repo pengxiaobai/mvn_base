@@ -12,6 +12,7 @@
     <module>exception</module>
     <module>reflex</module>
     <module>annomation</module>
+    <module>log</module>
   </modules>
   
   <dependencies>

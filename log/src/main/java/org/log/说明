@@ -1,0 +1,2 @@
+日志记录器(logger)的级别定义
+TRACE	DEBUG	INFO	WARN	ERROR	FATAL	ALL
