@@ -11,6 +11,7 @@
     <module>lamda</module>
     <module>exception</module>
     <module>reflex</module>
+    <module>annomation</module>
   </modules>
   
   <dependencies>

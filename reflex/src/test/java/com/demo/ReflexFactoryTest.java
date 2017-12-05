@@ -22,7 +22,7 @@ import org.junit.Test;
 * <br><b>Date:</b> 2017年12月4日 下午5:48:30
  */
 public class ReflexFactoryTest {
-
+	
 	@Test
 	public void testLoadClassByObject() {
 		/**
@@ -34,6 +34,7 @@ public class ReflexFactoryTest {
 		String bagRotu = "com.demo.Student";
 		try {
 			//===================加载类==========
+			
 			Class clz = ReflexFactory.loadClassByRotu(bagRotu);
 			//==================构造器==========
 			//公共构造器
