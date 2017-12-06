@@ -2,6 +2,36 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="org.mybatis.first.AdminDao">
 	
+	
+	<!--===========插入一条数据并获取主键================ -->
+<!-- 	1. -->
+<!-- 	<insert id="insertUser" parameterType="org.mybatis.first.Admin"> -->
+<!-- 		<selectKey keyProperty="id" resultType="int" order="AFTER"> -->
+<!-- 		select LAST_INSERT_ID() -->
+<!-- 		</selectKey> -->
+<!-- 		insert into admin(name)value(#{name}) -->
+<!-- 	</insert> -->
+<!-- 2 -->
+	<insert id="insertAdmin" parameterType="org.mybatis.first.Admin"
+	keyProperty="id" useGeneratedKeys="true">
+		insert into admin(name)value(#{name})
+	</insert>
+	<!-- ========================================== -->
+	
+	
+	<!-- ====================插入多条数据并获取主键值==================== -->
+	<!-- 
+		collection的值必须是list
+	 -->
+	<insert id="insertAdmins" parameterType="org.mybatis.first.Admin"
+	keyProperty="id" useGeneratedKeys="true">
+		insert into admin(name)values
+		<foreach  item="admin" collection="list" separator=",">
+			(#{admin.name})
+		</foreach>
+	</insert>
+
+	
 	<select id="find" resultType="org.mybatis.first.Admin">
 		select id,name from admin where id=#{id}
 	</select>

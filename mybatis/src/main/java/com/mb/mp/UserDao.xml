@@ -2,14 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="com.mb.mp.UserDao">
 	
-	<!-- 插入多条数据  并返回自动生成的主键 -->
-	<insert id="insertUser" useGeneratedKeys="true"
-		keyProperty="id">
-		
-		insert into user(name,age)values
-		<foreach item="user" collection="users" separator=",">
-			(#{user.name},#{user.age})
-		</foreach>
+	<insert id="insertUser">
+		insert into user(name,age)value(#{name},#{age})
 	</insert>
+	<insert id="insertUser" ></insert>
+	<!-- 插入多条数据  并返回自动生成的主键 -->
+<!-- 	<insert id="insertUsers" useGeneratedKeys="true" -->
+<!-- 		keyProperty="id"> -->
+		
+<!-- 		insert into user(name,age)values -->
+<!-- 		<foreach item="user" collection="users" separator=","> -->
+<!-- 			(#{user.name},#{user.age}) -->
+<!-- 		</foreach> -->
+<!-- 	</insert> -->
 	
 </mapper>

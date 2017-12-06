@@ -2,6 +2,8 @@ package org.mybatis.first;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 /**
  * 
 * <b>Description:</b><br> 
@@ -26,4 +28,30 @@ public interface AdminDao {
 	* <br><b>Version:</b> 1.0
 	 */
 	public List<Admin> find(int id);
+	
+	/**
+	 * 
+	* <b>Description:插入一条数据</b><br> 
+	* @param admin
+	* @return
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 上午12:10:49
+	* <br><b>Version:</b> 1.0
+	 */
+	public int insertAdmin(Admin admin);
+	
+	/**
+	 * 
+	* <b>Description:插入多条数据</b><br> 
+	* @param admins
+	* @return
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 上午12:11:33
+	* <br><b>Version:</b> 1.0
+	* 
+	* 注意：名称必须为list
+	 */
+	public int insertAdmins(@Param("list")List<Admin> admins);
 }

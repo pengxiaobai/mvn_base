@@ -66,6 +66,14 @@ public class SqlSessionFactoryDemoTest {
 		}
 	}
 	
+	/**
+	 * 
+	* <b>Description:插入一条数据</b><br> 
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 上午12:01:54
+	* <br><b>Version:</b> 1.0
+	 */
 	@Test
 	public void test3(){
 		SqlSessionFactory factory;
@@ -74,20 +82,52 @@ public class SqlSessionFactoryDemoTest {
 					.createSqlSessionFactory("mybatis-config.xml");
 			//创建sqlsession
 			SqlSession session = factory.openSession();
-			UserDao userDaoMapper = 	session.getMapper(UserDao.class);
-			List<User> users = new ArrayList<User>();
-			User user = new User();
-			user.setAge(10);
-			user.setName("李四");
-			users.add(user);
-			userDaoMapper.insertUser(users);
+			AdminDao adminDao = (AdminDao)session.getMapper(AdminDao.class);;
+			Admin admin = new Admin();
+			admin.setName("zzz");
+			adminDao.insertAdmin(admin);
+			session.commit();
+			System.out.println("主键:"+admin.getId());
 			session.close();
+			System.out.println("插入完成");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	
+
+	}
+	/**
+	 * 
+	* <b>Description:插入多条数据</b><br> 
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 上午12:02:52
+	* <br><b>Version:</b> 1.0
+	 */
+	@Test
+	public void test4(){
+		SqlSessionFactory factory = null;
+		try{
+			factory = SqlSessionFactoryDemo
+					.createSqlSessionFactory("mybatis-config.xml");
+			SqlSession session = factory.openSession();
+			List<Admin> admins = new ArrayList<Admin>();
+			Admin admin = new Admin();
+			admin.setName("kkk");
+			admins.add(admin);
+			admin = new Admin();
+			admin.setName("hhhh");
+			admins.add(admin);
+			AdminDao adminDao = session.getMapper(AdminDao.class);
+			adminDao.insertAdmins(admins);
+			session.commit();
+			for(Admin admin2:admins){
+				System.out.println("主键:"+admin2.getId()+",姓名:"+admin2.getName());
+			}
+			session.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

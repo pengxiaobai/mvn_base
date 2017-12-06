@@ -11,7 +11,6 @@ package com.mb.mp;
 * <br><b>Date:</b> 2017年12月6日 下午3:05:27
  */
 public class User {
-	
 	private int id;
 	private String name;
 	private int age;
