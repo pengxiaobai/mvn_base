@@ -1,7 +1,8 @@
-package org.mybatis.first;
+package com.mb.mp;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.zip.InflaterInputStream;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;

@@ -1,12 +1,15 @@
 package org.mybatis.first;
 
-import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
+
+import com.mb.mp.User;
+import com.mb.mp.UserDao;
 
 /**
  * 
@@ -35,6 +38,7 @@ public class SqlSessionFactoryDemoTest {
 			if(null != admins && 0 < admins.size()){
 				System.out.println(admins.get(0));
 			}
+			
 			session.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -60,6 +64,30 @@ public class SqlSessionFactoryDemoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void test3(){
+		SqlSessionFactory factory;
+		try {
+			factory = SqlSessionFactoryDemo
+					.createSqlSessionFactory("mybatis-config.xml");
+			//创建sqlsession
+			SqlSession session = factory.openSession();
+			UserDao userDaoMapper = 	session.getMapper(UserDao.class);
+			List<User> users = new ArrayList<User>();
+			User user = new User();
+			user.setAge(10);
+			user.setName("李四");
+			users.add(user);
+			userDaoMapper.insertUser(users);
+			session.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
 	}
 
 }
