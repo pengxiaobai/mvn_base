@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="org.mybatis.first.select.relevance.OrderInfoDao">
+
+	<!-- ==================关联查询======================= -->
+	<resultMap id="orderMap" type="org.mybatis.first.select.relevance.OrderInfoEx" >
+	
+		<association property="user" column="userId" javaType="org.mybatis.first.select.User"
+		select="findUserById"/>
+	</resultMap>
+	<!-- 查询订单 -->
+	<select id="findAllOrderInfo" resultMap="orderMap">
+		select id,userId,shoppName,commodity,price,createTime
+		from orderInfo order by ${order}
+	</select>
+	<select id="findUserById" resultType="org.mybatis.first.select.User">
+		select id,name,age,address,createTime from user where id= #{id}
+	</select>
+	<!-- ================================================ -->
+</mapper>
