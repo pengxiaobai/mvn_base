@@ -8,8 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 
-import com.mb.mp.User;
-import com.mb.mp.UserDao;
 
 /**
  * 
@@ -125,6 +123,63 @@ public class SqlSessionFactoryDemoTest {
 				System.out.println("主键:"+admin2.getId()+",姓名:"+admin2.getName());
 			}
 			session.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	* 
+	* <b>Description:测试修改</b><br> 
+	* @Exception 
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 上午11:38:43
+	* <br><b>Version:</b> 1.0
+	 */
+	@Test
+	public void test5(){
+		SqlSessionFactory factory = null;
+		
+		try {
+			factory = SqlSessionFactoryDemo.createSqlSessionFactory("mybatis-config.xml");
+			SqlSession session = factory.openSession();
+			AdminDao adminDao = session.getMapper(AdminDao.class);
+			List<Admin> admins = new ArrayList<Admin>();
+			int num = adminDao.updateAdmin("a","aaaa");
+			session.commit();
+			System.out.println("返回值:"+num);
+			for(Admin admin :admins){
+				System.out.println("主键值:"+admin.getId());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * 
+	* 
+	* <b>Description:删除</b><br> 
+	* @Exception 
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 下午1:40:44
+	* <br><b>Version:</b> 1.0
+	 */
+	@Test
+	public void test6(){
+		SqlSessionFactory factory = null;
+		try{
+			factory = SqlSessionFactoryDemo.createSqlSessionFactory("mybatis-config.xml");
+			SqlSession session = factory.openSession();
+			AdminDao adminDao = session.getMapper(AdminDao.class);
+			int num = adminDao.deleteAdminByid(6);
+			
+			session.commit();
+			session.close();
+			System.out.println("删除完成:"+num);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

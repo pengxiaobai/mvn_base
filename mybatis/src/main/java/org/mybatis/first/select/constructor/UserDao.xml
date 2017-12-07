@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="org.mybatis.first.select.constructor.UserDao">
+ 
+ 	<!-- 构造器
+ 	 
+ 	 	autoMapping:关闭自动映射
+ 	 -->
+ 	<resultMap type="org.mybatis.first.select.constructor.User" id="userMap" autoMapping="false">
+ 		<constructor>
+ 			<idArg column="id" javaType="int"/>
+ 			<arg column="name" javaType="String"/>
+ 			<arg column="age" javaType="_int"/>
+ 			<arg column="address" javaType="String"/>
+ 		</constructor>
+ 	</resultMap>
+ 	<select id="findAllUsers" parameterType="String" resultMap="userMap" >
+ 		select id,name,age,address,createTime from user order by ${order}
+ 	</select>
+ 	
+ 	
+ 	
+ 	<resultMap type="org.mybatis.first.select.constructor.User" id="userMap1" autoMapping="false">
+ 		<constructor>
+ 			<idArg column="id" javaType="int"/>
+ 			<arg column="name" javaType="String"/>
+ 			<arg column="age" javaType="_int"/>
+ 			<arg column="address" javaType="String"/>
+ 			<arg column="createTime" javaType="java.sql.Timestamp"/>
+ 		</constructor>
+ 	</resultMap>
+  	<select id="findAllUsers1" parameterType="String" resultMap="userMap1">
+ 		select id,name,age,address,createTime from user order by ${order}
+ 	</select>
+ 
+</mapper>

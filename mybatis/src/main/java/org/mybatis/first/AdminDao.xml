@@ -30,6 +30,22 @@
 			(#{admin.name})
 		</foreach>
 	</insert>
+	<!-- ============================================== -->
+	
+	
+	<!-- ====================删除信息========================== -->
+	<delete id="deleteAdminByid" parameterType="int">
+		delete from admin where id=#{id}
+	</delete>
+	
+	<!-- ============================================== -->
+	
+	<!-- ====================修改信息========================== -->
+	<update id="updateAdmin" parameterType="String" keyProperty="id" useGeneratedKeys="true">
+		update admin set name=#{name} where name=#{name1}
+	</update>
+	
+	<!-- ============================================== -->
 
 	
 	<select id="find" resultType="org.mybatis.first.Admin">

@@ -3,6 +3,8 @@
 <configuration>
 
 <properties resource="jdbc.properties"/>
+
+
 <!-- 数据库配置 
 XML 配置文件（configuration XML）
 中包含了对 MyBatis 系统的核心设置，
@@ -10,7 +12,7 @@ XML 配置文件（configuration XML）
 和决定事务作用域和控制方式的事务管理器（TransactionManager）
 -->
 <typeAliases>
-	<typeAlias type="com.mb.mp.User" alias="user"/>
+	<typeAlias alias="user" type="org.mybatis.first.select.User"/>
 </typeAliases>
 <environments default="development">
 	<environment id="development">
@@ -24,7 +26,6 @@ XML 配置文件（configuration XML）
 	</environment>
 </environments>
 	<mappers>
-		<mapper resource="org/mybatis/first/AdminDao.xml"/>
-<!-- 		<mapper resource="com/mb/mp/UserDao.xml"/> -->
+		<package name="org.mybatis.first"/>
 	</mappers>
 </configuration>

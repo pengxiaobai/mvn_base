@@ -54,4 +54,36 @@ public interface AdminDao {
 	* 注意：名称必须为list
 	 */
 	public int insertAdmins(@Param("list")List<Admin> admins);
+	
+	/**
+	 * 
+	* 
+	* <b>Description:修改账号信息</b><br> 
+	* @param admin
+	* @return
+	* @Exception 
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 上午10:53:14
+	* <br><b>Version:</b> 1.0
+	 */
+	public int updateAdmin(@Param("name")String name,@Param("name1")String name1);
+	
+	/**
+	 * 
+	* 
+	* <b>Description:删除信息</b><br> 
+	* @param id
+	* @return
+	* @Exception 
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月7日 上午10:57:10
+	* <br><b>Version:</b> 1.0
+	 */
+	public int deleteAdminByid(int id);
+	
+	
+	
+	
 }
