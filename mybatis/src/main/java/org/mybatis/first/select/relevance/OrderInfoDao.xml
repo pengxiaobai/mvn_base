@@ -3,8 +3,8 @@
 <mapper namespace="org.mybatis.first.select.relevance.OrderInfoDao">
 
 	<!-- ==================关联查询======================= -->
-	<resultMap id="orderMap" type="org.mybatis.first.select.relevance.OrderInfoEx" >
-	
+	<resultMap id="orderMap" type="org.mybatis.first.select.relevance.OrderInfoEx">
+		<result column="userId" property="userId"/>
 		<association property="user" column="userId" javaType="org.mybatis.first.select.User"
 		select="findUserById"/>
 	</resultMap>

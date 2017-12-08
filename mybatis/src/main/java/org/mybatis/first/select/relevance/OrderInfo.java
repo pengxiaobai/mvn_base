@@ -17,7 +17,7 @@ public class OrderInfo {
 	private int userId;
 	private String shoppName;
 	private String commodity;
-	private double pricce;
+	private double price;
 	private Timestamp createTime;
 	public long getId() {
 		return id;
@@ -38,11 +38,11 @@ public class OrderInfo {
 	public void setCommodity(String commodity) {
 		this.commodity = commodity;
 	}
-	public double getPricce() {
-		return pricce;
+	public double getPrice() {
+		return price;
 	}
-	public void setPricce(double pricce) {
-		this.pricce = pricce;
+	public void setPricce(double price) {
+		this.price = price;
 	}
 	public Timestamp getCreateTime() {
 		return createTime;
@@ -59,7 +59,7 @@ public class OrderInfo {
 	@Override
 	public String toString() {
 		return "OrderInfo [id=" + id + ", userId=" + userId + ", shoppName=" + shoppName + ", commodity=" + commodity
-				+ ", pricce=" + pricce + ", createTime=" + createTime + "]";
+				+ ", price=" + price + ", createTime=" + createTime + "]";
 	}
 	
 	
