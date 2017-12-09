@@ -46,3 +46,13 @@ create table orderInfo(
 	primary key(id),
 	constraint fk_userId foreign key(userId) references user(id)
 )engine=innodb auto_increment=1000001 default charset=utf8
+
+//订单商品详情表
+create table orderGoods(
+	id bigint auto_increment comment "主键",
+	orderInfoId bigint not null comment "订单id",
+	name varchar(50) not null comment "商品名称",
+	createTime timestamp default now() comment "创建时间",
+	primary key(id),
+	constraint fk_orderInfoId foreign key(orderInfoId) references orderInfo(id)
+)engine=innodb auto_increment=1111 default charset=utf8

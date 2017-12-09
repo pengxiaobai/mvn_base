@@ -11,6 +11,10 @@ XML 配置文件（configuration XML）
 包含获取数据库连接实例的数据源（DataSource）
 和决定事务作用域和控制方式的事务管理器（TransactionManager）
 -->
+<settings>
+	
+    <setting name="logImpl" value="LOG4J"/>
+</settings>
 <typeAliases>
 	<typeAlias alias="user" type="org.mybatis.first.select.User"/>
 </typeAliases>

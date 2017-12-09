@@ -17,4 +17,59 @@
 		select id,name,age,address,createTime from user where id= #{id}
 	</select>
 	<!-- ================================================ -->
+	
+	
+	
+	<!-- =========================关联结果集================================== -->
+	
+		<resultMap id="orderMap1" type="org.mybatis.first.select.relevance.OrderInfoEx" >
+			<result column="orderId" property="id"/>
+			<result column="orderCreateTime" property="createTime" />
+			<result column="userId" property="userId"/>
+			<result column="shoppName" property="shoppName"/>
+			<result column="commodity" property="commodity"/>
+			<result column="price" property="price"/>
+			<association property="user" column="userId"  javaType="org.mybatis.first.select.User" 
+			resultMap="userMap" />
+		</resultMap>
+	
+		<resultMap  id="userMap" type="org.mybatis.first.select.User">
+			<result column="id" property="id"/>
+				<result column="name" property="name"/>
+				<result column="age" property="age"/>
+				<result column="address" property="address"/>
+				<result  column="createTime" property="createTime"/>
+		</resultMap>
+		<select id="findAllOrderInfo1" resultMap="orderMap1">
+			select a.id orderId,a.userId userId,a.shoppName,a.commodity,
+			a.price,a.createTime orderCreateTime,b.id,b.name,b.age,b.address,b.createTime 
+			from orderInfo a join user b on  a.userId = b.id order by ${order}
+		</select>
+	
+	<!-- =================================================================== -->
+	
+	
+	
+	<!-- ================================集合结果================================== -->
+		<resultMap id="orderMap2" type="org.mybatis.first.select.relevance.OrderInfoEx" >
+			<result column="orderId" property="id"/>
+			<result column="orderCreateTime" property="createTime" />
+			<result column="userId" property="userId"/>
+			<result column="shoppName" property="shoppName"/>
+			<result column="commodity" property="commodity"/>
+			<result column="price" property="price"/>
+			<collection property="orderGoodss" 
+			ofType="org.mybatis.first.select.relevance.OrderGoods">
+				<id property="id" column="orderGoodsId"/>
+				<result property="orderInfoId" column="orderInfoId"/>
+				<result property="name" column="name"/>
+				<result property="createTime" column="og_createTime"/>
+			</collection>
+		</resultMap>
+		<select id="findAllOrderInfo2" resultMap="orderMap2">
+			select a.id,a.commodity,a.userId,a.shoppName,a.price,a.createTime,
+			b.id orderGoodsId,b.orderInfoId,b.name,b.createTime og_createTime
+			from orderInfo a  left join orderGoods b on a.id=b.orderinfoId  order by ${order}
+		</select>
+	<!-- ======================================================================== -->
 </mapper>
