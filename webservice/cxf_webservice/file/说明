@@ -1,0 +1,5 @@
+1.什么是cxf
+ cxf是apacher开发的一个web sevices框架
+ cxf = Celtix + XFire
+ 支持jax-ws,可以和spring集成，RESTful services，WS-*等
+ 可以在tomcat,jetty，java应用程序中部署

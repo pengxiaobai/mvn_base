@@ -4,14 +4,16 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.base</groupId>
-    <artifactId>webservice</artifactId>
+    <artifactId>javaBase</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>jdk_webservice</artifactId>
-  <name>jdk_webservice</name>
+  <groupId>com.base</groupId>
+  <artifactId>design_pattern</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>design_pattern</name>
   <url>http://maven.apache.org</url>
+  <packaging>pom</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <dependencies></dependencies>
 </project>

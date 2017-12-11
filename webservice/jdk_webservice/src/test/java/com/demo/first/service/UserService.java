@@ -27,33 +27,15 @@ public interface UserService {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns boolean
+     *     returns java.util.List<com.demo.first.service.User>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addUser", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddUser")
-    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddUserResponse")
-    @Action(input = "http://first.demo.com/UserService/addUserRequest", output = "http://first.demo.com/UserService/addUserResponse")
-    public boolean addUser(
-        @WebParam(name = "arg0", targetNamespace = "")
-        User arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "addStudent", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddStudent")
-    @ResponseWrapper(localName = "addStudentResponse", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddStudentResponse")
-    @Action(input = "http://first.demo.com/UserService/addStudentRequest", output = "http://first.demo.com/UserService/addStudentResponse")
-    public boolean addStudent(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Student arg0);
+    @RequestWrapper(localName = "findAll", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.FindAll")
+    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.FindAllResponse")
+    @Action(input = "http://first.demo.com/UserService/findAllRequest", output = "http://first.demo.com/UserService/findAllResponse")
+    public List<User> findAll();
 
     /**
      * 
@@ -74,6 +56,21 @@ public interface UserService {
      * 
      * @param arg0
      * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addUser", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddUser")
+    @ResponseWrapper(localName = "addUserResponse", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddUserResponse")
+    @Action(input = "http://first.demo.com/UserService/addUserRequest", output = "http://first.demo.com/UserService/addUserResponse")
+    public boolean addUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        User arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
      *     returns com.demo.first.service.User
      */
     @WebMethod
@@ -87,14 +84,17 @@ public interface UserService {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<com.demo.first.service.User>
+     *     returns boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findAll", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.FindAll")
-    @ResponseWrapper(localName = "findAllResponse", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.FindAllResponse")
-    @Action(input = "http://first.demo.com/UserService/findAllRequest", output = "http://first.demo.com/UserService/findAllResponse")
-    public List<User> findAll();
+    @RequestWrapper(localName = "addStudent", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddStudent")
+    @ResponseWrapper(localName = "addStudentResponse", targetNamespace = "http://first.demo.com/", className = "com.demo.first.service.AddStudentResponse")
+    @Action(input = "http://first.demo.com/UserService/addStudentRequest", output = "http://first.demo.com/UserService/addStudentResponse")
+    public boolean addStudent(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Student arg0);
 
 }

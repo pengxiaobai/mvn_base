@@ -1,19 +1,14 @@
 package com.demo.first.client;
 
-import static org.junit.Assert.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
-import javax.xml.ws.soap.SOAPBinding;
 
 import org.junit.Test;
-import org.omg.PortableServer.ServantRetentionPolicyValue;
 
 import com.demo.first.service.Student;
 import com.demo.first.service.User;
@@ -21,6 +16,10 @@ import com.demo.first.service.User.Schools;
 import com.demo.first.service.User.Schools.Entry;
 import com.demo.first.service.UserService;
 import com.demo.first.service.UserService_Service;
+
+
+
+
 
 
 /**
@@ -48,7 +47,7 @@ public class ClientTest {
 	public void testFindAll() {
 		//创建一个工厂
 		UserService_Service factory = new UserService_Service();
-		UserService userService =  factory.getUserServiceImplPort();
+		UserService userService =  (UserService) factory.getUserServiceImplPort();
 		//调用say方法
 		System.out.println(userService.say("武松"));
 		
@@ -110,7 +109,7 @@ public class ClientTest {
 	}
 	
 	/**
-	 * 通代理访问接口
+	 * JAX-WS Proxy
 	 */
 	@Test
 	public void testProxy() {
@@ -120,7 +119,7 @@ public class ClientTest {
 			//wsdl文件中开始的 targetNamespace和name
 			QName service_name = new QName("http://first.demo.com/", "UserService");
 			Service service = Service.create(wsdlURl, service_name);
-			UserService service2 = service.getPort(UserService.class);
+			UserService service2 = (UserService) service.getPort(UserService.class);
 			String result = service2.say("武松");
 			System.out.println(result);
 			
