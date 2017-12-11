@@ -5,6 +5,7 @@ import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import com.demo.entity.Student;
 import com.demo.entity.User;
 
 /**
@@ -79,6 +80,18 @@ public interface UserService {
 	 */
 	@WebMethod
 	public boolean addUser(User user);
+	
+	/**
+	 * 添加学生数据
+	* <b>Description:</b><br> 
+	* @param stu
+	* @return
+	* @Note
+	* <b>userName:Peng Xuehui</b><br>
+	* <br><b>Date:</b> 2017年12月11日 下午10:04:18
+	* <br><b>Version:</b> 1.0
+	 */
+	public boolean addStudent(Student stu);
 	
 	
 

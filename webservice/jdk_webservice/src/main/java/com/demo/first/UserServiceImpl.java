@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.jws.WebService;
 
+import com.demo.entity.Student;
 import com.demo.entity.User;
 
 /**
@@ -36,6 +37,7 @@ public class UserServiceImpl implements UserService {
 		this.users = users;
 	}
 	
+	
 	/**
 	 * 打印你好+name
 	 */
@@ -43,6 +45,7 @@ public class UserServiceImpl implements UserService {
 	public String say(String name) {
 		return "hello "+name;
 	}
+	
 	
 	/**
 	 * 获取用户信息
@@ -66,7 +69,15 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean addUser(User user) {
 		users.add(user);
+		System.out.println("添加用户信息:"+user);
 		return true;
+	}
+
+
+	@Override
+	public boolean addStudent(Student stu) {
+		System.out.println("添加数据:"+stu);
+		return false;
 	}
 
 }

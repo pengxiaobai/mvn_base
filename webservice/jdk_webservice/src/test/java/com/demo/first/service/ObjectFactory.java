@@ -27,10 +27,12 @@ public class ObjectFactory {
     private final static QName _AddUser_QNAME = new QName("http://first.demo.com/", "addUser");
     private final static QName _SayResponse_QNAME = new QName("http://first.demo.com/", "sayResponse");
     private final static QName _FindUserByIdResponse_QNAME = new QName("http://first.demo.com/", "findUserByIdResponse");
+    private final static QName _AddStudent_QNAME = new QName("http://first.demo.com/", "addStudent");
     private final static QName _AddUserResponse_QNAME = new QName("http://first.demo.com/", "addUserResponse");
     private final static QName _FindAll_QNAME = new QName("http://first.demo.com/", "findAll");
     private final static QName _Say_QNAME = new QName("http://first.demo.com/", "say");
     private final static QName _FindAllResponse_QNAME = new QName("http://first.demo.com/", "findAllResponse");
+    private final static QName _AddStudentResponse_QNAME = new QName("http://first.demo.com/", "addStudentResponse");
     private final static QName _FindUserById_QNAME = new QName("http://first.demo.com/", "findUserById");
 
     /**
@@ -57,6 +59,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddStudent }
+     * 
+     */
+    public AddStudent createAddStudent() {
+        return new AddStudent();
+    }
+
+    /**
      * Create an instance of {@link FindUserByIdResponse }
      * 
      */
@@ -78,6 +88,14 @@ public class ObjectFactory {
      */
     public SayResponse createSayResponse() {
         return new SayResponse();
+    }
+
+    /**
+     * Create an instance of {@link AddStudentResponse }
+     * 
+     */
+    public AddStudentResponse createAddStudentResponse() {
+        return new AddStudentResponse();
     }
 
     /**
@@ -121,6 +139,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Student }
+     * 
+     */
+    public Student createStudent() {
+        return new Student();
+    }
+
+    /**
      * Create an instance of {@link User.Schools.Entry }
      * 
      */
@@ -153,6 +179,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://first.demo.com/", name = "findUserByIdResponse")
     public JAXBElement<FindUserByIdResponse> createFindUserByIdResponse(FindUserByIdResponse value) {
         return new JAXBElement<FindUserByIdResponse>(_FindUserByIdResponse_QNAME, FindUserByIdResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddStudent }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://first.demo.com/", name = "addStudent")
+    public JAXBElement<AddStudent> createAddStudent(AddStudent value) {
+        return new JAXBElement<AddStudent>(_AddStudent_QNAME, AddStudent.class, null, value);
     }
 
     /**
@@ -189,6 +224,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://first.demo.com/", name = "findAllResponse")
     public JAXBElement<FindAllResponse> createFindAllResponse(FindAllResponse value) {
         return new JAXBElement<FindAllResponse>(_FindAllResponse_QNAME, FindAllResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddStudentResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://first.demo.com/", name = "addStudentResponse")
+    public JAXBElement<AddStudentResponse> createAddStudentResponse(AddStudentResponse value) {
+        return new JAXBElement<AddStudentResponse>(_AddStudentResponse_QNAME, AddStudentResponse.class, null, value);
     }
 
     /**

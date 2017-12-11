@@ -15,6 +15,7 @@ import javax.xml.ws.soap.SOAPBinding;
 import org.junit.Test;
 import org.omg.PortableServer.ServantRetentionPolicyValue;
 
+import com.demo.first.service.Student;
 import com.demo.first.service.User;
 import com.demo.first.service.User.Schools;
 import com.demo.first.service.User.Schools.Entry;
@@ -23,6 +24,11 @@ import com.demo.first.service.UserService_Service;
 
 
 /**
+ * java自带的不支持对对集合类型的数据的添加
+ * 
+ * 
+ * 
+ * 
  * 
  * <b>Description:用户接口测试</b><br>
  * <b>@userName:Peng Xuehui<b><br>
@@ -55,7 +61,16 @@ public class ClientTest {
 //		List<String> hobys1 = new ArrayList<String>();
 //		hobys1.add("编写程序");
 //		hobys1.add("听故事");
-		Schools schools1 = new Schools();
+//		Schools schools1 = new Schools();
+//		List<Entry> entries1 = schools1.getEntry();
+//		Entry entry1 = new Entry();
+//		entry1.setKey("小学");
+//		entry1.setValue("彭庄小学");
+//		entries1.add(entry1);
+//		user1.setSchools(schools1);
+		userService.addUser(user1);
+		System.out.println("添加用户信息完成");
+//		schools1
 //		schools1.
 //		user1.setSchools();
 		
@@ -108,10 +123,20 @@ public class ClientTest {
 			UserService service2 = service.getPort(UserService.class);
 			String result = service2.say("武松");
 			System.out.println(result);
+			
+			
+			//打印用户信息
 			List<User> users =  service2.findAll();
 			for(User user:users){
 				System.out.println(user.getName());
 			}
+			
+			
+			Student student = new Student();
+			student.setId(22);
+			student.setName("无言");
+			service2.addStudent(student);
+			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -119,21 +144,6 @@ public class ClientTest {
 
 	
 
-	/**
-	 * Test method for {@link com.demo.first.UserServiceImpl#findUserById(int)}.
-	 */
-	@Test
-	public void testFindUserById() {
-		fail("Not yet implemented");
-	}
 
-	/**
-	 * Test method for
-	 * {@link com.demo.first.UserServiceImpl#addUser(com.demo.entity.User)}.
-	 */
-	@Test
-	public void testAddUser() {
-		fail("Not yet implemented");
-	}
 
 }
