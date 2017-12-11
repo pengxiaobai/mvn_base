@@ -1,0 +1,22 @@
+1.什么是webservice
+ (1)是基于web的服务，它向外界暴露出一个能够通过Web进行调用的API，实现不同平台，不同语言
+ 	程序之间的数据交换
+ (2)采用SOAP(简单对象访问协议)协议，传输数据信息，也就是http+xml处理的协议
+ 
+ 注意：如果应用程序需要多语言的支持，Axis2 应当是首选了； 
+ 	如果应用程序是遵循 Spring 哲学路线的话，Apache CXF 是一种更好的选择。
+ 	
+2.wsdl(网络服务描述语言)
+ （1）是基于xml的用于描述web services以及如何访问web services的语言
+  （2）主要有以下四种元素
+  	<portType> 	web service 执行的操作
+	<message> 	web service 使用的消息
+	<types> 	web service 使用的数据类型
+	<binding> 	web service 使用的通信协议
+	
+3.soap
+  (1)是一种简单的基于 XML 的协议，它使应用程序通过 HTTP 来交换信息。
+  
+4.什么是cxf
+cxf是Apache开发的一个webservices框架
+

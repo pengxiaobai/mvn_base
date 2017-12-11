@@ -1,6 +1,5 @@
-<?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.base</groupId>
@@ -10,15 +9,59 @@
   <artifactId>webservice</artifactId>
   <name>webservice</name>
   <url>http://maven.apache.org</url>
+   <packaging>pom</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <cxf.version>3.2.0</cxf.version>
   </properties>
-  
-  <dependencies>
-  	<dependency>
-	    <groupId>org.apache.cxf</groupId>
-	    <artifactId>cxf-core</artifactId>
-	    <version>3.2.0</version>
-	</dependency>
-  </dependencies>
+
+ <!-- 插件 -->
+<!--  <build> -->
+<!--  	<plugins> -->
+<!--  		<plugin> -->
+<!-- 		    <groupId>org.apache.cxf</groupId> -->
+<!-- 		    <artifactId>cxf-codegen-plugin</artifactId> -->
+<!-- 		    <version>${cxf.version}</version> -->
+<!-- 		    <executions> -->
+<!-- 		        <execution> -->
+<!-- 		            <id>generate-sources</id> -->
+<!-- 		            <phase>generate-sources</phase> -->
+<!-- 		            <configuration> -->
+<!-- 		                <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot> -->
+<!-- 		                <wsdlOptions> -->
+<!-- 		                    <wsdlOption> -->
+<!-- 		                        <wsdl>${basedir}/src/main/resources/userServicce.wsdl</wsdl> -->
+<!-- 		                    </wsdlOption> -->
+<!-- 		                </wsdlOptions> -->
+<!-- 		            </configuration> -->
+<!-- 		            <goals> -->
+<!-- 		                <goal>wsdl2java</goal> -->
+<!-- 		            </goals> -->
+<!-- 		        </execution> -->
+<!-- 		    </executions> -->
+<!-- 		</plugin> -->
+<!--  	</plugins> -->
+<!--  </build> -->
+<!--   <dependencies> -->
+<!--  	<dependency> -->
+<!--   	    <groupId>org.apache.cxf</groupId> -->
+<!--         <artifactId>cxf-rt-frontend-jaxws</artifactId> -->
+<!--         <version>${cxf.version}</version> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--         <groupId>org.apache.cxf</groupId> -->
+<!--         <artifactId>cxf-rt-transports-http</artifactId> -->
+<!--         <version>${cxf.version}</version> -->
+<!--     </dependency> -->
+<!--         Jetty is needed if you're are not using the CXFServlet -->
+<!--     <dependency> -->
+<!--         <groupId>org.apache.cxf</groupId> -->
+<!--         <artifactId>cxf-rt-transports-http-jetty</artifactId> -->
+<!--         <version>${cxf.version}</version> -->
+<!--     </dependency> -->
+<!--   </dependencies> -->
+  <modules>
+    <module>jdk_webservice</module>
+
+	</modules>
 </project>
