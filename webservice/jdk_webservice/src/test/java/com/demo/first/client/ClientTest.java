@@ -56,7 +56,7 @@ public class ClientTest {
 //		hobys1.add("编写程序");
 //		hobys1.add("听故事");
 		Schools schools1 = new Schools();
-		schools1.
+//		schools1.
 //		user1.setSchools();
 		
 		//================================================================
