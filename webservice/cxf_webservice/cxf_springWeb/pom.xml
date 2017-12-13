@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.base</groupId>
+    <artifactId>cxf_webservice</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>cxf_springWeb</artifactId>
+  <packaging>war</packaging>
+  <name>cxf_springWeb Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <!-- 配置spring -->
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>4.3.13.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>4.3.13.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-webapp</artifactId>
+	    <version>9.4.7.RC0</version>
+	</dependency>
+  </dependencies>
+  <build>
+    <finalName>cxf_springWeb</finalName>
+  </build>
+</project>
