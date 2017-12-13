@@ -15,8 +15,9 @@ import javax.xml.ws.Endpoint;
 
 public class HelloWolrdMain {
 	public static void main(String[] args) {
-		String EndPointAdrress = "http://localhost:9999/hellowolrd";
-		Endpoint.publish(EndPointAdrress, new HelloWorldImpl());
+		
+		String EndPointAdrress = "http://127.0.0.1:9999/hellowolrd";
+		Endpoint.publish(null, new HelloWorldImpl());
 		System.out.println("发布成功");
 		
 	}
