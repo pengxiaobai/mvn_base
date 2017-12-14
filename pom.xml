@@ -18,6 +18,7 @@
     <module>webservice</module>
     <module>design_pattern</module>
     <module>io_file</module>
+    <module>web</module>
   </modules>
   
   <dependencies>
