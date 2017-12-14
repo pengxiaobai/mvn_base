@@ -24,14 +24,14 @@ import javax.jws.WebService;
 * endpointInterface：指定实现类实现的SEI的完整名称。只有在服务实现类使用属性时才使用该属性。
 * portName：设置 wsdl:port，默认为实现类+“Port”
 */
-@WebService(name="HelloWorld1111"
-,targetNamespace="http://com.demo.first"
-,wsdlLocation="http://localhost:9999/helloWorldtt?wsdl")
+@WebService
+(name="HelloWorld1111"
+,targetNamespace="http://com.demo.first",
+wsdlLocation="http://127.0.0.1:9999/hellowolrd?wsdl")
 public interface HelloWorld {
 	
 	//@WebParam 
 	@WebMethod
 	public String say(@WebParam(name="name1")String name);
-	
 
 }
