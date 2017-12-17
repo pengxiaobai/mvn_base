@@ -19,8 +19,19 @@
     <module>design_pattern</module>
     <module>io_file</module>
     <module>web</module>
+    <module>spring-framwork-pom</module>
   </modules>
-  
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-framework-bom</artifactId>
+            <version>1.5.9.RELEASE</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
   <dependencies>
   	  <dependency>
       <groupId>junit</groupId>

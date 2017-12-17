@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 * <br><b>ClassName:</b> Application
 * <br><b>Date:</b> 2017年12月15日 上午12:31:41
 */
-@SpringBootApplication()
+@SpringBootApplication
 public class Application {
 	
 	public static void main(String[] args) {

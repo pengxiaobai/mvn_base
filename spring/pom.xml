@@ -10,5 +10,8 @@
   <packaging>pom</packaging>
   <modules>
     <module>spring_boot_first</module>
+    <module>spring-framwork-pom</module>
+    <module>spring-framwprk-pom</module>
+    <module>spring-demo</module>
   </modules>
 </project>
