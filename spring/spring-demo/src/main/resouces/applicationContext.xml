@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   	<bean id="userService" class="org.spring.demo.bean.UserService"/>
+   	<bean name="userServiceName,userServiceName1,userServiceName2" 
+   	class="org.spring.demo.bean.UserService"/>
+   	<!-- 定义别名   name：指向的是原bean的id值      alias：是起的别名-->
+   	<alias name="userService" alias="myUser"/>
+   	
+</beans>
