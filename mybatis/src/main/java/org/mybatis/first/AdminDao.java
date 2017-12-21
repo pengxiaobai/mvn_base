@@ -54,7 +54,7 @@ public interface AdminDao {
 	* 注意：名称必须为list
 	 */
 	public int insertAdmins(@Param("list")List<Admin> admins);
-	
+
 	/**
 	 * 
 	* 
