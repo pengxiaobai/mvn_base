@@ -3,12 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-   
-   
-   <bean id="userService" class="org.spring.demo.bean.constructor.UserService">
-   	<constructor-arg ref="orderService"/>
-   </bean>
-   
-   <bean id="orderService" class="org.spring.demo.bean.constructor.OrderService"/>
-   	
+        
+        
+        <!-- 用户数据层 -->
+   <bean id="userDao" class="org.spring.demo.bean.instantiation.dao.UserDao"/>
+
 </beans>
