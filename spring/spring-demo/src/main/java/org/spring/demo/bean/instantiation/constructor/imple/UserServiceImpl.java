@@ -1,5 +1,7 @@
 package org.spring.demo.bean.instantiation.constructor.imple;
 
+import java.beans.ConstructorProperties;
+
 import org.spring.demo.bean.instantiation.constructor.UserService;
 import org.spring.demo.bean.instantiation.dao.UserDao;
 
@@ -24,6 +26,11 @@ public class UserServiceImpl implements UserService {
 	
 	public UserServiceImpl(int i){
 		System.out.println("我是UserServiceImpl一个参数构造器,参数:"+i);
+	}
+	
+	@ConstructorProperties({"ii","name1"})
+	public UserServiceImpl(int i,String name){
+		System.out.println("我是UserServiceImpl的双参数构造器,i:"+i+",name"+name);
 	}
 	
 	

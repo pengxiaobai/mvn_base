@@ -12,6 +12,13 @@
    		<constructor-arg value="1"/>
    </bean>
    
+   <bean id="userService3" class="org.spring.demo.bean.instantiation.constructor.imple.UserServiceImpl">
+   		<constructor-arg name="ii" value="1"/>
+   		<constructor-arg name="name1" value="王五"/>
+   </bean>
+   
+   
+   
    <!-- set注入配置    
    		property：name 对应的是setUserDao 中UserDao
    		value:映射的是值

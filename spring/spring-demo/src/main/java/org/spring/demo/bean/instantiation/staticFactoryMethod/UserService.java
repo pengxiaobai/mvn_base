@@ -11,5 +11,7 @@ package org.spring.demo.bean.instantiation.staticFactoryMethod;
 */
 
 public interface UserService {
-
+	
+	
+	public void say();
 }

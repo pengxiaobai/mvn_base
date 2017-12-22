@@ -42,6 +42,7 @@ public class ConstructorTest {
 		UserService service1 = applicationContext.getBean("userService1", UserServiceImpl.class);
 		UserService service2 = applicationContext.getBean("userService1", UserServiceImpl.class);
 		UserService service3 = applicationContext.getBean("userService2", UserServiceImpl.class);
+		UserService service4 = applicationContext.getBean("userService3", UserServiceImpl.class);
 		UserServiceImpl userServiceImpl = applicationContext.getBean("userService2", UserServiceImpl.class);
 		UserServiceImpl1 service11 = applicationContext.getBean("userService11", UserServiceImpl1.class);
 		
@@ -60,6 +61,8 @@ public class ConstructorTest {
 		System.out.println("hashcode:"+service11.hashCode());
 		userServiceImpl =null;
 		System.out.println(service11.getUserDao().getName());
+		
+		service4.say();
 		
 	}
 

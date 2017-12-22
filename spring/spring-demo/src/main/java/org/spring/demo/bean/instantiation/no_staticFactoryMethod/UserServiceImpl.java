@@ -1,6 +1,5 @@
-package org.spring.demo.bean.instantiation.staticFactoryMethod.imple;
+package org.spring.demo.bean.instantiation.no_staticFactoryMethod;
 
-import org.spring.demo.bean.instantiation.staticFactoryMethod.UserService;
 
 /**
  * 使用静态的方法创建对象
@@ -14,22 +13,21 @@ import org.spring.demo.bean.instantiation.staticFactoryMethod.UserService;
 * <br><b>Date:</b> 2017年12月21日 下午11:57:54
 */
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl{
 	private static UserServiceImpl userServiceImpl = new UserServiceImpl();
 	
 	
-	public static UserService createInstance(){
-		System.out.println("我静态方法");
+	public  UserServiceImpl createInstance(){
+		System.out.println("我是非静态方法");
 		return userServiceImpl;
 	}
 	
-	public static UserService createInstance1(){
-		System.out.println("我静态方法2");
+	public  UserServiceImpl createInstance1(){
+		System.out.println("我是非静态方法2");
 		return new UserServiceImpl();
 	} 
 
 
-	@Override
 	public void say() {
 		System.out.println("你好呀");
 	}
