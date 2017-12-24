@@ -16,7 +16,10 @@
    		<constructor-arg name="ii" value="1"/>
    		<constructor-arg name="name1" value="王五"/>
    </bean>
-   
+   <!-- 引入另一个bean -->
+   <bean id="userService11" class="org.spring.demo.bean.instantiation.constructor.imple.UserServiceImpl1">
+   		<constructor-arg ref="userDao"/>
+   </bean>
    
    
    <!-- set注入配置    
@@ -32,9 +35,7 @@
    </bean>
 
    
-       <bean id="userService11" class="org.spring.demo.bean.instantiation.constructor.imple.UserServiceImpl1">
-   		<constructor-arg ref="userDao"/>
-   	   </bean>
+      
   
    <import resource="../dao.xml"/>
    	

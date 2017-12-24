@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 		<!-- 复合属性配置 -->
+ 		<bean id="user"  class="org.spring.demo.bean.compound_property_names.UserBean">
+ 			<property name="orderBean" ref="orderBean"/>
+ 			<!-- 复合属性配置 -->
+ 			<property name="orderBean.id" value="111"/>
+ 			<property name="orderBean.orderId" value="0292902934400"/>
+ 		</bean>
+ 		
+ 		<bean id="orderBean" class="org.spring.demo.bean.compound_property_names.OrderBean"/>
+</beans>

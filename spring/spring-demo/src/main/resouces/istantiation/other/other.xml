@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  	
+  	<!-- 内部类测试
+  	 * 对于内部类的注入，要注意非静态内部类，其默认构造函数有一个参数，
+	 * 是其外部类的实例，记住这一点在spring中定义内部类就没有问题了。
+	 * 如果内部类不需要访问外部类的实例，可以将其定义为static的，
+	 * 这样也就不需要额外的构造函数参数设置了。
+  	 -->
+  	<bean id="outClass" class="org.spring.demo.bean.instantiation.other.OutClass">
+  		<property name="innerClasss">
+<!--   		 因为不需要外部引用  所以不需要配置id或者name -->
+  			<bean class="org.spring.demo.bean.instantiation.other.OutClass.InnerClasss">
+  				<property name="id" value="11"/>
+  				<property name="name" value="内部类"/>
+  			</bean>
+  		</property>
+  	</bean>
+  	
+  	
+  		<bean id="outClass1" class="org.spring.demo.bean.instantiation.other.OutClass">
+  		<property name="innerClasss1">
+  		 <!-- 因为不需要外部引用  所以不需要配置id或者name属性 -->
+  			<bean class="org.spring.demo.bean.instantiation.other.OutClass.InnerClass1">
+  				<constructor-arg ref="outClass" />
+  			</bean>
+  		</property>
+  	</bean>
+</beans>
