@@ -7,4 +7,22 @@
   		<property name="id" value="1"/>
   		<property name="name" value="王晓"/>
   	</bean>
+  	
+  	
+  	<bean id="commandManager" class="org.spring.demo.bean.method_injection.CommandManager"/>
+  	
+  	
+  	<bean id="commandManager2" class="org.spring.demo.bean.method_injection.CommandMannage2">
+  		<property name="command" ref="command"/>
+  	</bean>
+  	
+  	
+  	
+  	<!-- lookup 方式查找 -->
+  	<bean id="lookup" class="org.spring.demo.bean.method_injection.lookup.CommandMannager">
+  		<lookup-method name="createCommand" bean="command"/>
+  	</bean>
+  	
+  	
+  	
 </beans>
