@@ -21,6 +21,7 @@ public class FruitInfoUtil {
 		String strFruitColor = "水果颜色:";
 		String strFruitProvicer = "供应商信息:";
 		
+		//通过凡是获取属性
 		Field[] fields = clz.getDeclaredFields();
 		
 		for(Field field:fields){
